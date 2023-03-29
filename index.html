@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main" id="main1">
+        <h1 class="maintitle">가짜 명화 찾기</h1>
+        <img src="main.jpg" alt="" style="width: 100%;">
+        <button class="startbutton" id="startbtn">시작하기</button>
+    </div>
+
+    <div class="hide" id="ques1">
+        <h1 class="maintitle">가짜 명화를 고르세요</h1>
+        <div class="quesform">
+            <div class="left">
+                <img src="img/gohfake.jpg" alt="" class=" questimg" id="quest1O">
+            </div>
+            <div class="right">
+                <img src="img/gohreal.jpg" alt="" class=" questimg" id="quest1X">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
+    <script>
+        var point = 0;
+
+        document.getElementById("startbtn").addEventListener('click',function(){
+            document.getElementById("main1").classList.add('hide')
+            document.getElementById("ques1").classList.remove('hide')
+
+        })
+
+        document.getElementById("quest1O").addEventListener('click',function(){
+            point = point +1;
+            document.getElementById("ques1").classList.add('hide')
+            alert("정답")
+        })
+
+        document.getElementById("quest1X").addEventListener('click',function(){
+            document.getElementById("ques1").classList.add('hide')
+            alert("오답")
+        })
+        
+    </script>
+</body>
+</html>
